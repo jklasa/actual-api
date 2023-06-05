@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ..:/workspaces:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
