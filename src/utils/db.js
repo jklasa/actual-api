@@ -2,7 +2,7 @@ import Database from 'better-sqlite3';
 
 // Create and connect to the SQLite database
 const db = new Database(':memory:', { verbose: console.log });
-db.pragma('journal_mode = WAL');
+//db.pragma('journal_mode = WAL');
 
 // Create a table for configurations
 db.exec(

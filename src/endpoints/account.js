@@ -1,8 +1,10 @@
-import { openActual, closeActual } from '../utils/actual.js'
+import { verifyActual } from '../utils/actual.js'
 import * as actualApi from '@actual-app/api';
 
-export function getAccounts(req, res) {
-    const accounts = actualApi.getAccounts();
+export async function getAccounts(req, res) {
+    if (!verifyActual(res)) { return }
+
+    const accounts = await actualApi.getAccounts();
     res.status(200).json(accounts);
 }
 
